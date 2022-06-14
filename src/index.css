@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  cursor: url(https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/undefined/external-injection-skincare-flaticons-lineal-color-flat-icons-2.png),
+    pointer;
+  @apply selection:bg-cyan-400 selection:text-opacity-75;
+}
