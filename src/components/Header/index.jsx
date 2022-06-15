@@ -8,7 +8,7 @@ const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <>
-      <div className="bg-white p-14 top-0 fixed w-full flex flex-row justify-between items-center h-24">
+      <div className="bg-white p-14 top-0 sticky z-10  w-full flex flex-row justify-between items-center h-24 shadow-sm shadow-black">
         <div
           onClick={() => {
             navigate("/");
@@ -62,8 +62,10 @@ const Header = () => {
       </div>
       <div
         className={`${
-          isSidebarOpen ? "w-[40vw] shadow-black shadow-xl" : "w-0 -right-96 "
-        }   bg-white  h-screen fixed right-0 top-0  transition-all duration-500  p-5 flex items-end flex-col z-50 `}
+          isSidebarOpen
+            ? "w-[40vw] shadow-black shadow-xl right-0 top-0 "
+            : "w-0 -right-[600px] "
+        }   bg-white  h-screen fixed  transition-all duration-300  p-5 flex  flex-col z-50 space-y-14 `}
       >
         <svg
           viewport="0 0 12 12"
@@ -77,6 +79,30 @@ const Header = () => {
           <line x1="1" y1="11" x2="11" y2="1" stroke="black" strokeWidth="2" />
           <line x1="1" y1="1" x2="11" y2="11" stroke="black" strokeWidth="2" />
         </svg>
+        <span
+          className="text-lg hover-underline-animation "
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          Home
+        </span>
+        <span
+          className="text-lg hover-underline-animation "
+          onClick={() => {
+            navigate("/register");
+          }}
+        >
+          Register{" "}
+        </span>
+        <span
+          className="text-lg hover-underline-animation"
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Login
+        </span>
       </div>
     </>
   );
