@@ -41,7 +41,7 @@ const AdminSidebar = () => {
       <span
         className="text-lg hover-underline-animation text-center"
         onClick={() => {
-          navigate("/admin_donors");
+          navigate("/admin_users");
         }}
       >
         View Users

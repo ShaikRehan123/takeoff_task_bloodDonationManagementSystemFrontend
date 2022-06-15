@@ -1,23 +1,18 @@
 import DashBoardHeader from "../components/DashboardHeader";
 import DashboardTitleHeader from "../components/DashBoardTitleHeader";
-import HospitalTable from "../components/HospitalTable";
-import Sidebar from "../components/Sidebar";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import AdminSidebar from "../components/AdminSidebar";
-import AdminHospitalsTable from "../components/AdminHospitalsTable";
-import AdminHospitalForm from "../components/AdminHospitalForm";
-import AdminBloodBanksForm from "../components/AdminBloodBanksForm";
-import AdminBloodBanksTable from "../components/AdminBloodBanksTable";
-const AdminHospitals = () => {
+import AdminUsersTable from "../components/AdminUsersTable";
+const AdminUsers = () => {
   const [isLoading, setISLoading] = useState(true);
   const [hospitalData, setHospitalData] = useState();
   const navigate = useNavigate();
   useEffect(() => {
     const getUserData = async () => {
-      const res = await axios.get(`http://localhost:8080/get_all_bloodbanks`);
+      const res = await axios.get(`http://localhost:8080/get_all_users`);
       if (res.data.status === 500) {
         notify.error("Internal Server Error");
       } else {
@@ -60,8 +55,7 @@ const AdminHospitals = () => {
             <DashBoardHeader />
             <DashboardTitleHeader module_name={"Hospitals"} />
             <div className="m-5 bg-gray-200 p-3 rounded-md shadow-lg shadow-gray-700  space-y-8">
-              <AdminBloodBanksForm />
-              <AdminBloodBanksTable hospitalData={hospitalData} />
+              <AdminUsersTable hospitalData={hospitalData} />
             </div>
           </div>
         </div>
@@ -70,4 +64,4 @@ const AdminHospitals = () => {
   }
 };
 
-export default AdminHospitals;
+export default AdminUsers;

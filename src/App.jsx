@@ -10,6 +10,7 @@ import BloodBank from "./pages/UserBloodBanks";
 import UserDonors from "./pages/UserDonors";
 import AdminHospitals from "./pages/AdminHospitals";
 import AdminBloodBanks from "./pages/AdminBloodBanks";
+import AdminUsers from "./pages/AdminUsers";
 function App() {
   return (
     <>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/user_donors" element={<UserDonors />} />
           <Route path="/admin_hospitals" element={<AdminHospitals />} />
           <Route path="/admin_bloodbanks" element={<AdminBloodBanks />} />
+          <Route path="/admin_users" element={<AdminUsers />} />
         </Routes>
       </BrowserRouter>
     </>
